@@ -1,0 +1,89 @@
+/* src/pages/ContactUs.css */
+
+.main-app-contactus {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #f1e5e5b5;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.contact-us-heading {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+.contant-cls-main-wrp {
+    display: flex;
+    width: 100%;
+    gap: 32px;
+}
+.contact-us-container {
+    
+    justify-content: space-between;
+    padding: 20px 20px 36px 20px;
+}
+
+.contact-form-section,
+.contact-info-section {
+    width: 50%;
+}
+
+.contact-info-section {
+    padding-left: 20%;
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info-section h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.submit-btn-wrap {
+    justify-content: center;
+    display: flex;
+}
+
+.contact-form-section {
+    padding-left: 50px;
+}

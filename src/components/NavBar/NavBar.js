@@ -1,31 +1,79 @@
-import React from 'react';
-import HomeIcon from '@mui/icons-material/Home';
-import CategoryIcon from '@mui/icons-material/Category';
-import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import LoginIcon from '@mui/icons-material/Login';
-import { NavLink } from 'react-router-dom';
-import './NavBar.css'; // We'll create this CSS file next
+import React, { useState, useEffect } from "react";
+import Grid from "@mui/system/Grid";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const selectedPage = useSelector((state) => state.page.selectedPage);
+  console.log(selectedPage, "selected-page");
+  const [isSticky, setIsSticky] = useState(false);
+
+  const handleScroll = () => {
+    // If the scroll is greater than 50px, set isSticky to true
+    if (window.scrollY > 50) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const getPageClassName = (pageName) => {
+    switch (pageName) {
+      case "/":
+        return "home-page";
+      case "/products":
+        return "products-page";
+      case "/checkout":
+        return "checkout-page";
+      default:
+        return "wrong-url-page";
+    }
+  };
+
   return (
-    <nav className="navbar">
-      <NavLink to="/" end className="nav-link">
-      <HomeIcon>Home</HomeIcon>
-      </NavLink>
-      <NavLink to="/products" className="nav-link">
-        <CategoryIcon>Products</CategoryIcon>
-      </NavLink>
-      <NavLink to="/checkout" className="nav-link">
-        <ProductionQuantityLimitsIcon>Checkout</ProductionQuantityLimitsIcon>
-      </NavLink>
-      <NavLink to="/admin" className="nav-link">
-        <AdminPanelSettingsIcon>Admin</AdminPanelSettingsIcon>
-      </NavLink>
-      <NavLink to="/login" className="nav-link">
-        <LoginIcon>Login</LoginIcon>
-      </NavLink>
-    </nav>
+    <>
+      <nav
+        className={`${getPageClassName(selectedPage)} navbar ${
+          isSticky ? "navbar--sticky" : ""
+        }`}
+      >
+        <div className="sub-navbar">
+          {/* Title section */}
+          <Grid className={"heading-link-wrap"}>
+            <h1>Anamalai Motors</h1>
+          </Grid>
+          {/* Nav section */}
+          <Grid className={"content-nav-link"}>
+            <div className={`${(getPageClassName(selectedPage))=="home-page"?"disabled-cls":""} nav-link-wrapper`}>
+              <NavLink to="/" end className="nav-link">
+                Home
+              </NavLink>
+            </div>
+            <div className={`${(getPageClassName(selectedPage))=="products-page"?"disabled-cls":""} nav-link-wrapper`}>
+              <NavLink to="/products" className="nav-link">
+                Products
+              </NavLink>
+            </div>
+            <div className={`${(getPageClassName(selectedPage))=="checkout-page"?"disabled-cls":""} nav-link-wrapper`}>
+              <NavLink to="/checkout" className="nav-link">
+                Checkout
+              </NavLink>
+            </div>
+          </Grid>
+        </div>
+      </nav>
+    </>
   );
 };
 
