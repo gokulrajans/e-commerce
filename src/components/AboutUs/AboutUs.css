@@ -1,0 +1,66 @@
+.main-app-aboutus {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #f1e5e5b5;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.abt-us-heading {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+.aboutus-first-sec {
+    display: flex;
+    padding-bottom: 32px;
+    gap: 32px;
+}
+.about-first-left {
+    width: 45%;
+}
+
+.about-first-right {
+    width: 65%;
+}
+
+.aboutus-second-sec {
+    width: 100%;
+}
+.no1-txt {
+    color: #1b47d2;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+    margin-bottom: 0px;
+    justify-content: center;
+    display: flex;
+}
+.certified-cls-wrap {
+    padding-top: 18px;
+    justify-content: center;
+    display: flex;
+}
+
+.certify-cls-main {
+    font-size: xx-large;
+    font-weight: 800;
+    line-height: 2.5;
+}
+
+.awards-img {
+    border-radius: 10px;
+    width: 100% !important;
+    height: 180px;
+}
+
+.award-img-main-wra {
+    padding-bottom: 26px;
+}
+
+.aboutus-sec-sub-cls {
+    padding-bottom: 24px;
+}

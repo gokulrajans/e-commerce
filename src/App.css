@@ -1,18 +1,8 @@
-body {
+/* App.css */
+
+body, html, #root, .App {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: Arial, sans-serif;
-}
-
-button {
-  padding: 10px 15px;
-  margin: 5px 0;
-  cursor: pointer;
-}
-
-form div {
-  margin-bottom: 10px;
-}
-
-h1 {
-  color: #2c3e50;
 }

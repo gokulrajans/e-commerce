@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import CheckoutPage from '../components/CheckOut/CheckoutPage';
+import './Checkout.css';
 
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -9,13 +11,8 @@ const Checkout = () => {
   };
 
   return (
-    <div>
-      <h1>Checkout</h1>
-      {!orderPlaced ? (
-        <button onClick={handleCheckout}>Place Order</button>
-      ) : (
-        <p>Thank you! Your order has been placed.</p>
-      )}
+    <div className='checkout-main-page'>
+      <CheckoutPage></CheckoutPage>
     </div>
   );
 };
