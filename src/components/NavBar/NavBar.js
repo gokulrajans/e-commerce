@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@mui/system/Grid";
+import Badge from '@mui/material/Badge';
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Navbar.css";
@@ -8,6 +9,9 @@ const Navbar = () => {
   const selectedPage = useSelector((state) => state.page.selectedPage);
   console.log(selectedPage, "selected-page");
   const [isSticky, setIsSticky] = useState(false);
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleScroll = () => {
     // If the scroll is greater than 50px, set isSticky to true
@@ -55,20 +59,40 @@ const Navbar = () => {
           </Grid>
           {/* Nav section */}
           <Grid className={"content-nav-link"}>
-            <div className={`${(getPageClassName(selectedPage))=="home-page"?"disabled-cls":""} nav-link-wrapper`}>
+            <div
+              className={`${
+                getPageClassName(selectedPage) === "home-page"
+                  ? "disabled-cls"
+                  : ""
+              } nav-link-wrapper`}
+            >
               <NavLink to="/" end className="nav-link">
                 Home
               </NavLink>
             </div>
-            <div className={`${(getPageClassName(selectedPage))=="products-page"?"disabled-cls":""} nav-link-wrapper`}>
+            <div
+              className={`${
+                getPageClassName(selectedPage) === "products-page"
+                  ? "disabled-cls"
+                  : ""
+              } nav-link-wrapper`}
+            >
               <NavLink to="/products" className="nav-link">
                 Products
               </NavLink>
             </div>
-            <div className={`${(getPageClassName(selectedPage))=="checkout-page"?"disabled-cls":""} nav-link-wrapper`}>
-              <NavLink to="/checkout" className="nav-link">
-                Checkout
-              </NavLink>
+            <div
+              className={`${
+                getPageClassName(selectedPage) === "checkout-page"
+                  ? "disabled-cls"
+                  : ""
+              } nav-link-wrapper`}
+            >
+              <Badge badgeContent={totalItems} color="secondary">
+                <NavLink to="/checkout" className="nav-link">
+                  Checkout
+                </NavLink>
+              </Badge>
             </div>
           </Grid>
         </div>

@@ -1,0 +1,20 @@
+
+.main-product-page-wrapper {
+    padding-top: 70px;
+    width: 100%;
+    height: auto;
+}
+
+.sub-product-page-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 24px;
+}
+.search-name-label-cls {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
