@@ -1,5 +1,5 @@
 // src/pages/CheckoutPage.jsx
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Typography,
@@ -21,8 +21,12 @@ import {
 } from "../../store/Slice/cartSlice";
 import RemoveIcon from "@mui/icons-material/Remove"; // Correctly imported
 import AddIcon from "@mui/icons-material/Add"; // Correctly imported
+import "./CheckoutPage.css";
+import FormDialog from "../UserInfoForm/FormDialog";
 
 const CheckoutPage = () => {
+  const [open, setOpen] = useState(false);
+
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
@@ -46,6 +50,15 @@ const CheckoutPage = () => {
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
 
+    // Function to open the dialog
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    // Function to close the dialog
+    const handleClose = () => {
+      setOpen(false);
+    };
   return (
     <Container sx={{ marginTop: 4, marginBottom: 4 }}>
       <Typography variant="h4" gutterBottom>
@@ -64,7 +77,11 @@ const CheckoutPage = () => {
                     <Typography variant="body2" color="text.secondary">
                       {item.description}
                     </Typography>
-                    <Typography variant="subtitle1" color="text.primary" sx={{ mt: 1 }}>
+                    <Typography
+                      variant="subtitle1"
+                      color="text.primary"
+                      sx={{ mt: 1 }}
+                    >
                       Price: ${item.price}
                     </Typography>
                   </CardContent>
@@ -78,11 +95,17 @@ const CheckoutPage = () => {
                         <RemoveIcon />
                       </IconButton>
                       <Typography>{item.quantity}</Typography>
-                      <IconButton color="primary" onClick={() => handleIncrement(item.id)}>
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleIncrement(item.id)}
+                      >
                         <AddIcon />
                       </IconButton>
                     </Box>
-                    <IconButton color="error" onClick={() => handleRemove(item.id)}>
+                    <IconButton
+                      color="error"
+                      onClick={() => handleRemove(item.id)}
+                    >
                       <DeleteIcon />
                     </IconButton>
                   </CardActions>
@@ -93,11 +116,30 @@ const CheckoutPage = () => {
 
           {/* Total Price and Clear Cart Button */}
           <Box sx={{ display: "flex", justifyContent: "space-between", mt: 4 }}>
-            <Typography variant="h6">Total: ${totalPrice}</Typography>
-            <Button variant="contained" color="secondary" onClick={handleClearCart}>
-              Clear Cart
-            </Button>
+            <div className="first-section-main-wrp">
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={handleClearCart}
+              >
+                Clear Cart
+              </Button>
+            </div>
+            <div className="second-section-main-wrp">
+              <Typography variant="h6">Total: ${totalPrice}</Typography>
+              {/* <Button
+                variant="contained"
+                color="secondary"
+                onClick={handleClearCart}
+              >
+                Buy Now
+              </Button> */}
+              <Button variant="contained" color="primary" onClick={handleOpen}>
+          Open User Information Form
+        </Button>
+            </div>
           </Box>
+          <FormDialog open={open} onClose={handleClose} />
         </>
       )}
     </Container>
