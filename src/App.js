@@ -14,8 +14,20 @@ import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import "./App.css";
 import { setPage } from "./store/Slice/pageSlice";
+import { initializeApp } from "firebase/app";
 
 function App() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAN3Uy3P-DBDFkcRnp0L1qSyiNrZps-B5A",
+    authDomain: "ecommerce-fb056.firebaseapp.com",
+    databaseURL: "https://ecommerce-fb056-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ecommerce-fb056",
+    storageBucket: "ecommerce-fb056.appspot.com",
+    messagingSenderId: "599264430490",
+    appId: "1:599264430490:web:edeee541b1935246b85223"
+  };
+  const app = initializeApp(firebaseConfig);
+  
   return (
     <Router>
       <MainRoutes />
