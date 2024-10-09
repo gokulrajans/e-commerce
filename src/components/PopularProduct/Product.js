@@ -107,7 +107,7 @@ const Product = ({ product, addToCart }) => {
     <ProductCard>
       <ProductImage src={getImageName(product.id)} alt={product.name} />
       <h2>{product.name}</h2>
-      <p className="product-msg-content">{product.message}</p>
+      {/* <p className="product-msg-content">{product.message}</p> */}
       {/* <p>Price: ${product.price}</p> */}
       {/* <AddToCartButton onClick={() => addToCart(product)}>
         Add to Cart

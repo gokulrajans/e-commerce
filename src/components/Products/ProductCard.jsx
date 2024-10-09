@@ -20,7 +20,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-import Image_1 from "../../assets/MainProductImages/49.png";
+import Image_1 from "../../assets/MainProductImages/34.png";
 import Image_2 from "../../assets/MainProductImages/48.png";
 import Image_3 from "../../assets/MainProductImages/47.png";
 import Image_4 from "../../assets/MainProductImages/46.png";
@@ -44,7 +44,7 @@ import Image_21 from "../../assets/MainProductImages/21.jpeg";
 import Image_22 from "../../assets/MainProductImages/80.png";
 import Image_23 from "../../assets/MainProductImages/23.jpeg";
 import Image_24 from "../../assets/MainProductImages/42.png";
-import Image_25 from "../../assets/MainProductImages/52.png";
+import Image_25 from "../../assets/MainProductImages/66.png";
 import Image_26 from "../../assets/MainProductImages/26.jpeg";
 import Image_27 from "../../assets/MainProductImages/27.png";
 import Image_28 from "../../assets/MainProductImages/28.png";
@@ -71,7 +71,7 @@ import Image_48 from "../../assets/MainProductImages/48.png";
 import Image_49 from "../../assets/MainProductImages/49.png";
 import Image_50 from "../../assets/MainProductImages/50.png";
 import Image_51 from "../../assets/MainProductImages/51.png";
-import Image_52 from "../../assets/MainProductImages/52.png";
+import Image_52 from "../../assets/MainProductImages/94.png";
 import Image_53 from "../../assets/MainProductImages/53.png";
 import Image_54 from "../../assets/MainProductImages/54.png";
 import Image_55 from "../../assets/MainProductImages/55.png";

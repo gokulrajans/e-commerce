@@ -134,8 +134,8 @@ const CheckoutPage = () => {
               >
                 Buy Now
               </Button> */}
-              <Button variant="contained" color="primary" onClick={handleOpen}>
-          Open User Information Form
+              <Button variant="contained" color="secondary" onClick={handleOpen}>
+          Buy Now
         </Button>
             </div>
           </Box>

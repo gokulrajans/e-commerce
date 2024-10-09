@@ -11,7 +11,7 @@ import {
   Box,
   Button,
 } from '@mui/material';
-
+import SuccessModal from './SuccessModel';
 const UserInfoForm = ({ onClose }) => {
   // State to hold form data
   const [formData, setFormData] = useState({
@@ -22,6 +22,20 @@ const UserInfoForm = ({ onClose }) => {
     pincode: '',
     paymentOption: '',
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open the modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    resetFormData();
+    onClose();
+  };
 
   // State to hold form errors
   const [errors, setErrors] = useState({});
@@ -83,24 +97,29 @@ const UserInfoForm = ({ onClose }) => {
       // Form is valid, proceed with submission
       const submissionData = { ...formData };
       console.log('Form Submission:', submissionData);
-      alert('Form submitted successfully! Check console for details.');
 
+      handleOpenModal();
       // Reset form
-      setFormData({
-        name: '',
-        address: '',
-        mobileNumber: '',
-        email: '',
-        pincode: '',
-        paymentOption: '',
-      });
+      
 
       // Close the modal
-      onClose();
+      // onClose();
     }
   };
 
+  const resetFormData = () => {
+    setFormData({
+      name: '',
+      address: '',
+      mobileNumber: '',
+      email: '',
+      pincode: '',
+      paymentOption: '',
+    });
+  }
+
   return (
+    <>
     <Box component="form" noValidate onSubmit={handleSubmit}>
       {/* Name */}
       <TextField
@@ -200,11 +219,13 @@ const UserInfoForm = ({ onClose }) => {
 
       {/* Submit Button */}
       <Box mt={2} display="flex" justifyContent="flex-end">
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="secondary">
           Submit
         </Button>
       </Box>
     </Box>
+    <SuccessModal open={isModalOpen} onClose={handleCloseModal} />
+    </>
   );
 };
 
