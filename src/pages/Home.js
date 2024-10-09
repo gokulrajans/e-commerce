@@ -4,7 +4,15 @@ import { Button } from "@mui/material";
 import { PopularProducts } from "../components/PopularProduct/PopularProducts";
 import { AboutUs } from "../components/AboutUs/AboutUs";
 import ContactUs from '../components/ContactUs/ContactUs';
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const navigateToProductPage =() => {
+    navigate('/products');
+  }
   return (
     <>
       <section id="home" className="hero-section">
@@ -13,7 +21,7 @@ const Home = () => {
             <div className="hero-content">
               <h1>Premium Quality Motors</h1>
               <p>Innovation Electric Motors Since 1946.</p>
-              <Button variant="contained">Explore our Products</Button>
+              <Button variant="contained" onClick={navigateToProductPage}>Explore our Products</Button>
               <div className="id-btns-wrapper">
               <Button variant="contained"><a href="#popular_product" className="id-cls">Popular Product</a></Button>
               <Button variant="contained"><a href="#about_us" className="id-cls">About Us</a></Button>
@@ -26,7 +34,7 @@ const Home = () => {
       <section id="popular_product" className="features-section">
         <div className="auto-product-rotate-wrap">
           <div className="rotate-card-wrp">
-            <h1 className="popular-head-name">Popular Products</h1>
+            <h1 className="popular-head-name">Our Popular Products</h1>
             <PopularProducts />
           </div>
         </div>

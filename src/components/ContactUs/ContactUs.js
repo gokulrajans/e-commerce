@@ -1,10 +1,13 @@
 // src/pages/ContactUs.js
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-
+import ThankYouModal from "../ModelsComponent/ThankYouModel";
 import "./ContactUs.css"; // Create a CSS file for styling
 
 const ContactUs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [name, setName] = useState('Gokulraj'); // Example name for now
+
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -17,13 +20,33 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const resetFormData = ()=>{
+    setFormData({
+      name: "",
+      mobile: "",
+      email: "",
+      message: "",
+    });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
+    setName(formData.name);
+    handleOpenModal();
     // You can handle form submission logic here (e.g., send it to a server)
+  };
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    resetFormData();
   };
 
   return (
+    <>
     <div className="main-app-contactus">
       <div className="contact-us-container">
       <h1 className="contact-us-heading">Contact Us</h1>
@@ -91,6 +114,8 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
+    {isModalOpen && <ThankYouModal name={name} onClose={handleCloseModal} />}
+    </>
   );
 };
 
