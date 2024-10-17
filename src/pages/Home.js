@@ -23,9 +23,9 @@ const Home = () => {
               <p>Innovation Electric Motors Since 1946.</p>
               <Button variant="contained" onClick={navigateToProductPage}>Explore our Products</Button>
               <div className="id-btns-wrapper">
-              <Button variant="contained"><a href="#popular_product" className="id-cls">Popular Product</a></Button>
+              {/* <Button variant="contained"><a href="#popular_product" className="id-cls">Popular Product</a></Button>
               <Button variant="contained"><a href="#about_us" className="id-cls">About Us</a></Button>
-              <Button variant="contained"><a href="#contact_us" className="id-cls">Contact Us</a></Button>
+              <Button variant="contained"><a href="#contact_us" className="id-cls">Contact Us</a></Button> */}
               </div>
             </div>
           </div>

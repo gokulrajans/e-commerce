@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import ProductList from "../components/Products/ProductList";
 import FilterDrawer from "../components/Products/FilterDrawer";
-import { IconButton, Badge, TextField, Box, Container } from "@mui/material";
+import { IconButton, TextField, Box, Container } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+// import { useSelector } from "react-redux";
 import "./Products.css";
 
 const Products = () => {
@@ -13,8 +11,8 @@ const Products = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  // const cartItems = useSelector((state) => state.cart.cartItems);
+  // const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
