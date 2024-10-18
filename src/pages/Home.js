@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { PopularProducts } from "../components/PopularProduct/PopularProducts";
 import { AboutUs } from "../components/AboutUs/AboutUs";
 import ContactUs from '../components/ContactUs/ContactUs';
+import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -15,7 +16,8 @@ const Home = () => {
   }
   return (
     <>
-      <section id="home" className="hero-section">
+    <BackgroundVideo />
+      <section id="home" className="hero-section overlay-content">
         <div className="secondary-hm-sec">
           <div className="main-left-wrp">
             <div className="hero-content">
