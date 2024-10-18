@@ -1,14 +1,24 @@
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1; /* Ensure the content is above the video */
+  text-align: center;
+}
+
 .hero-section {
-  background-image: url('/src/assets/test-test-09.png');
+  /* background-image: url('/src/assets/test-test-09.png'); */
   /* Ensure the image is in the public folder */
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
   height: 100vh;
   position: relative;
   color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .secondary-hm-sec {
