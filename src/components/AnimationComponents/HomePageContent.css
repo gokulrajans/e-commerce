@@ -1,0 +1,18 @@
+  
+  .homepagecontent-text-content {
+    position: absolute;
+    left: 5%; /* Adjust this value for the exact positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+  }
+  
+  .hmpg-cnt-hidden {
+    opacity: 0;
+  }
+  
+  .hmpg-cnt-visible {
+    opacity: 1;
+    transition: opacity 2s ease-in-out; /* Animation duration and effect */
+  }
+  
