@@ -108,7 +108,7 @@ const ContactUs = () => {
           <p>Anamalai Motors, Industrial Park,</p>
           <p>456 Motor Street, Salem, TN, India</p>
           <h3>Contact Information:</h3>
-          <p>Phone: +91-9876543210</p>
+          <p>Phone: +91 9095588998</p>
           <p>Email: contact@anaimalaimotor.com</p>
         </div>
         </div>
