@@ -57,6 +57,7 @@ const UserInfoForm = ({ onClose }) => {
   // Validate form data
   const validate = () => {
     let tempErrors = {};
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
 
     if (!formData.name.trim()) tempErrors.name = "Name is required";
     if (!formData.address.trim()) tempErrors.address = "Address is required";
@@ -67,8 +68,10 @@ const UserInfoForm = ({ onClose }) => {
     }
     if (!formData.email.trim()) {
       tempErrors.email = "Email is required";
-    } else if (
-      !/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(
+    }
+    
+    else if (
+      emailRegex.test(
         formData.email
       )
     ) {
