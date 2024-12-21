@@ -15,7 +15,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const selectedPage = useSelector((state) => state.page.selectedPage);
@@ -28,8 +28,8 @@ const Navbar = () => {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedMenu, setSelectedMenu] = useState(null);
-  const navigate = useNavigate();
+  // const [selectedMenu, setSelectedMenu] = useState(null);
+  // const navigate = useNavigate();
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
